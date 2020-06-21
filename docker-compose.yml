@@ -8,7 +8,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql    #データの永続化のために必要
     ports:
-      - "3306:3306"  #両方3306でもok。詳細は下の「番外編：DBをsequel proで可視化したい」へ
+      - "4306:3306"  #両方3306でもok。詳細は下の「番外編：DBをsequel proで可視化したい」へ
 
   web:
     build:
@@ -20,7 +20,7 @@ services:
     depends_on:
       - db # DB側のコンテナが出来上がってからwebを実行する
     ports:
-      - "3000:3000" # ホストからゲストへポートフォワード
+      - "4000:3000" # ホストからゲストへポートフォワード
     volumes:
       - .:/lesson_docker # ソースコード変更したらDocker側も即反映されるように
 volumes:

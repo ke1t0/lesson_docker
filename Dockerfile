@@ -10,9 +10,8 @@ WORKDIR /lesson_docker
 
 ADD Gemfile /lesson_docker/Gemfile
 ADD Gemfile.lock /lesson_docker/Gemfile.lock
-RUN rm Gemfile.lock
 
-
+RUN gem install bundler -v 1.3.0
 RUN bundle install
 
 ADD . /lesson_docker
